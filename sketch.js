@@ -1,3 +1,6 @@
+//Created by Aadi Golecha on 18.11.2021
+//FRUIT COLLECTOR 1 (debug) 
+
 var database;
 var back_img;
 var gameState =0;
@@ -14,7 +17,9 @@ var player_img;
 var player1score =0;
 var player2score =0;
 
-function preload(){
+function preload()
+{
+  //loaded all the images from the images folder
   back_img = loadImage("images/jungle.jpg");
   player_img = loadImage("images/basket2.png");
   fruit1_img = loadImage("images/apple2.png");
@@ -22,18 +27,28 @@ function preload(){
   fruit3_img = loadImage("images/melon2.png");
   fruit4_img = loadImage("images/orange2.png");
   fruit5_img = loadImage("images/pineapple2.png");
+  
+  //created new group
   fruitGroup = new Group();
 }
-function setup() {
+
+function setup() 
+{
+  //setting up the canvas 
   createCanvas(1000, 600);
+  
+  //showing the kind of data base
   database = firebase.database();
+  
+  //Created a new game
   game = new Game();
   game.getState();
   game.start();
   
 }
 
-function draw() {
+function draw() 
+{
   background(back_img);
   
    if (playerCount === 2) {
